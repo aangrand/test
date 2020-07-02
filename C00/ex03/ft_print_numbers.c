@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 11:24:53 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/02 15:17:23 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/02 15:53:30 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/02 20:17:58 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_print_alphabet(void)
+void ft_print_numbers(void)
 {
-	int i = 97;
-	
-	while (i < 123)
-	{
-		char lettre = (char)i;
+	int i = 0; 
 
-		printf("%c",lettre);
+	while(i < 10)
+	{
+		printf("%d", i);
 		i ++;
 	}
 }
+
+void ft_putchar (char c)
+{
+	write(1, &c, 1);
+} 

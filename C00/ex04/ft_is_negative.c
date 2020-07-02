@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 11:24:53 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/02 15:17:23 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/02 16:10:30 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/02 16:17:52 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_print_alphabet(void)
+void ft_is_negative(int n) 
 {
-	int i = 97;
-	
-	while (i < 123)
+	if (n < 0)
 	{
-		char lettre = (char)i;
-
-		printf("%c",lettre);
-		i ++;
+		printf("N"); 
+	}
+	else 
+	{
+		printf("P");
 	}
 }
