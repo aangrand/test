@@ -5,49 +5,64 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 16:19:24 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/02 22:16:21 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/03 11:30:38 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/03 16:54:39 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void ft_print_comb(void)
+void	ft_putchar(char c)
 {
-	int x = 0;
-	int xmin = 0; 
-	int y = 0;
-	int ymin = 0; 
-	int z = 0; 
-	int zmin = 0;
-	int i = 0; 
-	int skip = 0; 
+	write(1, &c, 1);
+}
 
-	for (x = xmin; x < 10; x++)
+void	aff_nb(char x, char y, char z)
+{
+	char comp;
+
+	ft_putchar(z + '0');
+	ft_putchar(x + '0');
+	ft_putchar(y + '0');
+	comp = z + x + y;
+	if (x = '7' & y != '8' & z != '9')
 	{
-		for (y = x; y < 10; y++)
-		{
-			for (z = y; z < 10; z++)
-			{
-				if (y == z | y == x | x == z)
-				{	
-					zmin++;
-					//printf("FAIL");
-				}
-				else 
-				{
-					printf("%d %d %d\n", x, y, z);
-				}
-			}
-			z = 0;
-		}
-		zmin = 0;
-		y = 0;
+		ft_putchar(44);
+		ft_putchar(0);
 	}
 }
 
-int main()
+void	ft_print_comb(void)
+{
+	int x = 0;
+	int y = 0;
+	int z = 0;
+
+	x = 0;
+	y = 0;
+	z = 0;
+	while (z < 10)
+	{
+		while (x < 10)
+		{
+			while (y < 10)
+			{
+				if (y != x & x != z & y != z)
+					aff_nb(x, y, z);
+				y++;
+			}
+			y = 0;
+			y += x + 1;
+			x++;
+		}
+		x = 0;
+		x += z + 1;
+		z ++;
+	}
+}
+
+int main	(void)
 {
 	ft_print_comb();
-	return(0);
+	return (0);
 }
