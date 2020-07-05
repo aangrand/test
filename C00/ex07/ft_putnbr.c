@@ -1,31 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/02 11:24:53 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/05 10:46:40 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/04 19:02:37 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/05 12:59:36 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <math.h>
+#include <stdio.h>
 
-void	ft_print_alphabet(void)
+void	ft_putchar(char c)
 {
-	int i;
+	write(1, &c, 1);
+}
 
-	i = 122;
-	while (i > 96)
+void	ft_putnbr(int nb)
+{
+	char temp;
+	int i;
+	char res[i];
+	
+	i = 1;
+	if (nb < 0) 	
+		write(1, "-", 1);
+	else if (nb == 0)
+		write(1, "0", 1);
+    while (nb != 0) 
 	{
-		write(1, &i, 1);
+		temp = nb % 10 + '0';
+		res[i] = temp;
+		nb /= 10;
+		i++;
+    }
+	while (i != 0)
+	{
+		write(1, &res[i], 1);
 		i--;
 	}
 }
 
 int		main(void)
 {
-	ft_print_alphabet();
+	ft_putnbr(12);
 	return (0);
 }

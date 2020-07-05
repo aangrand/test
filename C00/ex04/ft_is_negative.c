@@ -6,20 +6,31 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 16:10:30 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/02 16:17:52 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/05 10:55:33 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
 void ft_is_negative(int n) 
 {
+	int N;
+	int P;
+
+	N = 78;
+	P = 80;
 	if (n < 0)
 	{
-		printf("N"); 
+		write(1, &N, 1);	
 	}
 	else 
 	{
-		printf("P");
+		write(1, &P, 1);
 	}
+}
+
+int		main(void)
+{
+	ft_is_negative(-50);
+	return (0);
 }

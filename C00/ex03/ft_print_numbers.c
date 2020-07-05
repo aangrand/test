@@ -6,24 +6,26 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 15:53:30 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/02 20:17:58 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/05 10:44:44 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <unistd.h>
 
-void ft_print_numbers(void)
+void	ft_print_numbers(void)
 {
-	int i = 0; 
+	int i;
 
-	while(i < 10)
+	i = 48;
+	while (i < 58)
 	{
-		printf("%d", i);
-		i ++;
+		write(1, &i, 1);
+		i++;
 	}
 }
 
-void ft_putchar (char c)
+int		main(void)
 {
-	write(1, &c, 1);
-} 
+	ft_print_numbers();
+	return (0);
+}
