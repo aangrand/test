@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 13:19:30 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/05 10:23:27 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/06 22:09:08 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/07 11:38:45 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void ft_div_mod(int a, int b, int *div, int *mod)
 {
-	write(1, &c, 1);
+	*div = a / b;
+	*mod = a % b;
 }

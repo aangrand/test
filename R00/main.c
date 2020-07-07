@@ -1,35 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   haut.c                                             :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 13:56:18 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/04 15:21:31 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/05 14:34:46 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/05 14:56:47 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+void	rush(int x, int y);
 
-void	haut(int size)
+int		main(void)
 {
-	int n;
-
-	n = 1;
-	if (size == 1)
-	{
-		ft_putchar('B');
-	}
-	else
-	{
-		while (n <= size)
-		{
-			if (n == 1 || n == size)
-				ft_putchar('B');
-			else
-				ft_putchar(' ');
-			n++;
-		}
-	}
+	rush(5, 10);
+	return (0);
 }

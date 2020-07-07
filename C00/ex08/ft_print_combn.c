@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aff_larg.c                                         :+:      :+:    :+:   */
+/*   ft_print_combn.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 13:26:19 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/04 15:45:00 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/06 10:19:24 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/06 11:16:47 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
-
-void	aff_larg(int pos, int size, int way)
+void ft_print_combn(int n)
 {
-	char x;
-	char y;
-	char z;
+	int a;
+	int b;
 
-	y = 'B';
-	if (way == 1)
+	a = 0;
+	b = 1;
+	while (a < 10)
 	{
-		x = 'A';
-		z = 'C';
+		while (b < 10)
+		{
+			a++;
+			write(1, &a, 1);
+			write(1, &b, 1);
+		}
+		b = 0;
+		a++;
 	}
-	else
-	{
-		x = 'C';
-		z = 'A';
-	}
-	if (pos == 1)
-		ft_putchar(x);
-	else if (pos == size)
-		ft_putchar(z);
-	else
-		ft_putchar(y);
 }
+
+int main(void)
+{
+	ft_print_combn(9)
+	return (0);
+}
+

@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/04 13:19:30 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/05 10:23:27 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/07 13:04:02 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/07 17:42:26 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	write(1, &c, 1);
+	int n;
+	int xn;
+	int tab_temp[xn];
+
+	n = 0;
+	xn = size;
+	while (n < size)
+	{
+		tab_temp[n] = tab[xn];
+		xn--;
+		n++;
+	}
+	n = 0;
+	tab[size] = tab_temp[size];
 }

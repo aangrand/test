@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/02 11:24:53 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/05 10:46:40 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/06 19:31:19 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+void	ft_print_reverse_alphabet(void)
 {
 	int i;
 
@@ -26,6 +26,6 @@ void	ft_print_alphabet(void)
 
 int		main(void)
 {
-	ft_print_alphabet();
+	ft_print_reverse_alphabet();
 	return (0);
 }

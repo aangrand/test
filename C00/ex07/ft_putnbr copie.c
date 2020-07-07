@@ -6,7 +6,7 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/04 19:02:37 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/07 10:21:55 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/05 19:29:11 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,37 +19,29 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	int			i;
-	char		res[i];
-	char		temp;
-	long int	long_nb;
-
+	int i;
+	char res[i];
+	char temp;
+    
+    if (nb > -2147483648 & nb < 2147483647)
+    {
 	i = 1;
-	if (nb > -2147483648 & nb < 2147483647)
-	{	
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = nb * (-1);
-		}		
-		while (nb >= 0)
-		{
-			temp = nb % 10 + '0';
-			res[i] = temp;
-			nb /= 10;
-			i++;
-		}
-		i--;
-		while (i >= 0)
-		{
-			write(1, &res[i], 1);
-			i--;
-		}
+	if (nb < 0)
+		write(1, "-", 1);
+	else if (nb == 0)
+		write(1, "0", 1);
+	while (nb != 0)
+	{
+		temp = nb % 10 + '0';
+		res[i] = temp;
+		nb /= 10;
+		i++;
 	}
-}
-
-int main(void)
-{
-	ft_putnbr(123456);
-	return (0);
+	i--;
+	while (i != 0)
+    {
+    write(1, &res[i], 1);
+    i--;
+    }
+    }
 }
