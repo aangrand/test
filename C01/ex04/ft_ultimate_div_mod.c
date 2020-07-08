@@ -6,11 +6,11 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/06 22:11:43 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/06 22:14:25 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/08 11:53:17 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_ultimate_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
 	int temp_a;
 	int temp_b;
