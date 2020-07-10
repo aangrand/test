@@ -1,1 +1,1 @@
-find . -type f -name "*.sh" -execdir echo {} ';' | cut -d'.' -f1
+find . -name "*.sh" | rev | sed "s/hs.//" | cut -d/ -f1 | rev

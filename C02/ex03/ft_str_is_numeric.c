@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 13:04:02 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/08 22:35:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/08 21:05:10 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/10 14:12:53 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+int		ft_str_is_numeric(char *str)
 {
-	int n;
-	int xn;
-	int tab_temp[xn];
+	int i;
 
-	n = 0;
-	xn = size;
-	while (n < size)
+	i = 0;
+	if (str[i] == '\0')
+		return (1);
+	while (str[i] != '\0')
 	{
-		tab_temp[n] = tab[xn];
-		xn--;
-		n++;
+		if (str[i] < 48 || str[i] > 57)
+			return (0);
+		i++;
 	}
-	n = 0;
-	tab[size] = tab_temp[size];
+	return (1);
 }

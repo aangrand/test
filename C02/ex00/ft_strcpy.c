@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 13:04:02 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/08 22:35:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/08 12:14:56 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/09 21:21:08 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int n;
-	int xn;
-	int tab_temp[xn];
 
 	n = 0;
-	xn = size;
-	while (n < size)
+	while (src[n] != '\0')
 	{
-		tab_temp[n] = tab[xn];
-		xn--;
+		dest[n] = src[n];
 		n++;
 	}
-	n = 0;
-	tab[size] = tab_temp[size];
+	dest[n] = '\0';
+	return (dest);
 }

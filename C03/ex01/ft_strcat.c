@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/07 13:04:02 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/08 22:35:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/10 13:51:48 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_rev_int_tab(int *tab, int size)
-{
-	int n;
-	int xn;
-	int tab_temp[xn];
+#include <string.h>
 
-	n = 0;
-	xn = size;
-	while (n < size)
-	{
-		tab_temp[n] = tab[xn];
-		xn--;
-		n++;
-	}
-	n = 0;
-	tab[size] = tab_temp[size];
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	int i;
+
+	i = 0;
+	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i < (n - 1))
+		i++;
+	return (s1[i] - s2[i]);	
+}
+
+int main ()
+{
+	char test1[] = "124";
+	char test2[] = "123";
+
+	int test = ft_strncmp(test1, test2, 2);
+	int testt = strncmp(test1,test2, 2);
+	printf("%d | %d", test, testt);
 }
