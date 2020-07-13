@@ -1,31 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 21:35:12 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/10 15:11:59 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/13 12:46:39 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/13 21:55:54 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+char *ft_strstr(char *str, char *to_find)
 {
 	int i;
+	int j;
 
 	i = 0;
-	if (str[i] == '\0')
+	j = 0;
+	if (to_find[0] == '\0')
+		return (0);
+	while (str[i])
 	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] < 32 || str[i] > 126)
+		if (str[i] == to_find[j])
 		{
-			return (0);
+			j++;
+			i++;
 		}
-		i++;
+		else if(to_find[j] == '\0')
+		{
+			return (&str[j - i]);
+		}
+		else 
+		{
+			j = 0;
+			i++; 
+		}
 	}
-	return (1);
+	return (0);
+}
+
+#include <stdio.h>
+
+int main ()
+{
+	char test1[] = "hello les copains";
+	char test2[] = "les";
+
+	char *test = ft_strstr(test1,test2);
+
+	printf("%s", test);
 }

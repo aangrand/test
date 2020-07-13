@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 21:35:12 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/10 15:11:59 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/13 22:15:55 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/13 22:25:55 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+int ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	if (str[i] == '\0')
-	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			return (0);
-		}
+	while (str[i])
 		i++;
-	}
-	return (1);
+
+	return (i);
+}
+
+int main ()
+{
+	printf("%d",ft_strlen("coucou"));
 }

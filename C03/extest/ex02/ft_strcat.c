@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 21:35:12 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/10 15:11:59 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/10 13:52:39 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/13 21:03:18 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
+#include <string.h>
+
+char *ft_strcat(char *dest, char *src)
 {
 	int i;
+	int n;
 
 	i = 0;
-	if (str[i] == '\0')
-	{
-		return (1);
-	}
-	while (str[i] != '\0')
-	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			return (0);
-		}
+	n = 0;
+	while(src[i])
 		i++;
+	while(dest[n])
+	{
+		src[i] = dest[n]; 
+		i++;
+		n++;
 	}
-	return (1);
+	src[i] = '\0';
+	return (src);		
+}
+
+int main ()
+{
+    char test1[] = "Bonjour";
+    char test2[] = " les copains";
+
+    //char *test = ft_strcat(test2, test1);
+    char *test = strcat(test1,test2);
+
+    printf("%s", test);
 }

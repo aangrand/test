@@ -6,7 +6,7 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/08 21:39:45 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/10 14:15:03 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/11 14:48:20 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 'a' || str[i] <= 'z')
+		if (str[i] >= 'a' && str[i] <= 'z')
 		{
 			str[i] = str[i] - 32;
 		}

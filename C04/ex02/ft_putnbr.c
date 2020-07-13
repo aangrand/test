@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/08 21:35:12 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/10 15:11:59 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/13 22:33:05 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/13 22:46:27 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_str_is_printable(char *str)
-{
-	int i;
+#include <unistd.h>
 
+void	ft_putnbr(int nb)
+{
+	long		i;
+	long int	n;
+	char		res[i];
+	char		temp;
+
+	n = nb;
 	i = 0;
-	if (str[i] == '\0')
+	if (n < 0)
 	{
-		return (1);
+		n = n * (-1);
+		write(1, "-", 1);
 	}
-	while (str[i] != '\0')
+	else if (n == 0)
+		write(1, "0", 1);
+	while (n != 0)
 	{
-		if (str[i] < 32 || str[i] > 126)
-		{
-			return (0);
-		}
+		temp = n % 10 + '0';
+		res[i] = temp;
+		n /= 10;
 		i++;
 	}
-	return (1);
+	while (i-- != 0)
+		write(1, &res[i], 1);
 }
