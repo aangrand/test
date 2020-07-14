@@ -6,11 +6,9 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 13:52:39 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 21:40:47 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/14 14:53:20 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <string.h>
 
 char	*ft_strcat(char *dest, char *src)
 {

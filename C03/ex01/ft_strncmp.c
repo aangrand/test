@@ -6,13 +6,13 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 21:39:04 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/14 14:14:48 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
