@@ -6,7 +6,7 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 17:16:32 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/20 17:31:27 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 19:29:15 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,12 @@ int		ft_sqrt(int nb)
 	i = 0;
 	if (nb < 46341)
 	{
-		while((i * i) < nb)
+		while ((i * i) < nb)
 		{
 			i++;
 			if (i * i > nb)
-				return(0); 
+				return (0);
 		}
 		return (i);
 	}
-}
-
-int		main()
-{
-	printf("%d", ft_sqrt(100));
 }

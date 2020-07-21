@@ -6,9 +6,12 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 15:22:30 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 16:41:36 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 15:36:05 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
+#include <stdlib.h>
 
 int		ft_atoi(char *str)
 {
@@ -36,4 +39,12 @@ int		ft_atoi(char *str)
 	if (n % 2 == 1)
 		res = -res;
 	return (res);
+}
+
+#include <string.h>
+
+int		main(void)
+{
+	printf("%d\n", ft_atoi("   +-+-+-1234512"));
+	return (0);
 }

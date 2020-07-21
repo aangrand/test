@@ -6,13 +6,13 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 22:26:43 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/20 15:00:32 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 15:52:39 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
@@ -22,14 +22,4 @@ void ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-}
-
-#include <string.h>
-
-int main()
-{
-	char *test = {"Bonjour"};
-
-	ft_putstr(test);
-	putstr(test);
 }

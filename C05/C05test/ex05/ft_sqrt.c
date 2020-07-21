@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 17:32:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 18:41:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/20 17:16:32 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 17:31:27 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int		ft_sqrt(int nb)
 {
 	int i;
-	int j;
 
-	i = 2;
-	j = 1;
-	while (i <= nb / 2)
+	i = 0;
+	if (nb < 46341)
 	{
-		while (j < 20)
+		while((i * i) < nb)
 		{
-			if (i * j == nb)
-				return (0);
-			j++;
+			i++;
+			if (i * i > nb)
+				return(0); 
 		}
-		j = 1;
-		i++;
+		return (i);
 	}
-	return (1);
+}
+
+int		main()
+{
+	printf("%d", ft_sqrt(100));
 }

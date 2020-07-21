@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 17:32:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 18:41:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/20 19:12:05 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 19:27:55 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int ft_recursive_factorial(int nb)
 {
-	int i;
-	int j;
+	if (nb < 0)
+		return (0);
+	if (nb == 0 || nb == 1)
+		return (1);
+	else
+		return (nb * ft_recursive_factorial(nb - 1));
+}
 
-	i = 2;
-	j = 1;
-	while (i <= nb / 2)
-	{
-		while (j < 20)
-		{
-			if (i * j == nb)
-				return (0);
-			j++;
-		}
-		j = 1;
-		i++;
-	}
-	return (1);
+#include <stdio.h>
+
+int main()
+{
+	printf("%d", ft_recursive_factorial(5));
 }

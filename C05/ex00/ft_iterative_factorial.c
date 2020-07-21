@@ -6,11 +6,11 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/18 18:33:37 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/20 19:11:42 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 17:11:44 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_iterative_factorial(int nb)
+int		ft_iterative_factorial(int nb)
 {
 	int i;
 	int res;
@@ -27,11 +27,4 @@ int ft_iterative_factorial(int nb)
 		i++;
 	}
 	return (res);
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d", ft_iterative_factorial(5));
 }

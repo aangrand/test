@@ -6,11 +6,11 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:12:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/20 19:27:55 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 17:13:31 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_recursive_factorial(int nb)
+int		ft_recursive_factorial(int nb)
 {
 	if (nb < 0)
 		return (0);
@@ -18,11 +18,4 @@ int ft_recursive_factorial(int nb)
 		return (1);
 	else
 		return (nb * ft_recursive_factorial(nb - 1));
-}
-
-#include <stdio.h>
-
-int main()
-{
-	printf("%d", ft_recursive_factorial(5));
 }

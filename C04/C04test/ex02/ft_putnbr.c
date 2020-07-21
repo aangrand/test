@@ -1,32 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 17:32:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 18:41:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/13 22:33:05 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/21 15:28:02 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
-{
-	int i;
-	int j;
+#include <unistd.h>
 
-	i = 2;
-	j = 1;
-	while (i <= nb / 2)
+void ft_putchar(char c)
+{
+	write(1, &c, 1);  
+}
+
+void    ft_putnbr(int nb)
+{
+	long        i;
+	long int    n;
+	char        *res;
+	char        temp;
+
+	n = nb;
+	i = 0;
+	if (n == -2147483648)
+		write(1, "-2147483648", 11);
+	else
 	{
-		while (j < 20)
+		if (n < 0)
 		{
-			if (i * j == nb)
-				return (0);
-			j++;
+			n = -n;
+			write (1, "-", 1);
 		}
-		j = 1;
-		i++;
+		if (n > 9)
+		{
+			ft_putnbr(n/10);
+			n = n % 10;
+		}
+		ft_putchar(n + 48);
 	}
-	return (1);
+}
+
+#include <libc.h>
+
+int main()
+{
+	ft_putnbr(12345);
 }

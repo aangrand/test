@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 17:32:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 18:41:08 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/13 22:15:55 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/21 15:21:29 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_is_prime(int nb)
+int ft_strlen(char *str)
 {
 	int i;
-	int j;
 
-	i = 2;
-	j = 1;
-	while (i <= nb / 2)
-	{
-		while (j < 20)
-		{
-			if (i * j == nb)
-				return (0);
-			j++;
-		}
-		j = 1;
+	i = 0;
+	while (str[i])
 		i++;
-	}
-	return (1);
+
+	return (i);
+}
+
+#include <stdio.h>
+#include <string.h>
+
+int main ()
+{
+	printf("%d\n%d",ft_strlen("bonjour"), strlen("bonjour"));
 }

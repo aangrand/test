@@ -6,23 +6,23 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 22:33:05 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/20 15:14:11 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/21 16:40:56 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
-	write(1, &c, 1);  
+	write(1, &c, 1);
 }
 
-void    ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	long        i;
-	long int    n;
-	char        *res;
-	char        temp;
+	long		i;
+	long int	n;
+	char		*res;
+	char		temp;
 
 	n = nb;
 	i = 0;
@@ -33,18 +33,13 @@ void    ft_putnbr(int nb)
 		if (n < 0)
 		{
 			n = -n;
-			write (1, "-", 1);
+			write(1, "-", 1);
 		}
 		if (n > 9)
 		{
-			ft_putnbr(n/10);
+			ft_putnbr(n / 10);
 			n = n % 10;
 		}
 		ft_putchar(n + 48);
 	}
-}
-
-int main()
-{
-	ft_putnbr(12345);
 }
