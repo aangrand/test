@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 20:51:42 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/20 17:32:05 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 17:45:20 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int ft_is_prime(int nb)
 {
 	int i;
+	int j;
 
-	i = 0;
-	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
+	while (i < nb / 2)
+	{
+		while (j < nb / 2)
+		{
+			if (i * j == nb)
+				return (0);
+			j++;
+		}
 		i++;
-	return (s1[i] - s2[i]);	
+	}
+	return (1);
 }
 
-#include <string.h>
 #include <stdio.h>
 
 int main ()
 {
-	char test1[] = "124";
-	char test2[] = "123";
+	printf("%d", ft_is_prime(97)); 
 
-	int test = ft_strncmp(test1, test2, -1);
-	int testt = strncmp(test1,test2, -1);
-	printf("%d | %d", test, testt);
 }

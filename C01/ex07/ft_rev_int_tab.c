@@ -27,3 +27,17 @@ void	ft_rev_int_tab(int *tab, int size)
 	n = 0;
 	tab[size] = tab_temp[size];
 }
+
+int main()
+{
+	int *tab = {1, 2, 3, 4, 5};
+	
+	ft_rev_int_tab(tab, 5);
+
+	int i =0;
+	while (i < 5)
+	{
+		printf("%d", tab[i]);
+		i++; 
+	}
+}

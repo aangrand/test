@@ -1,16 +1,14 @@
-/* ************************************************************************** */
+/ -l ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/15 11:08:57 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/15 11:12:32 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/15 18:37:46 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 17:00:38 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void ft_putchar(char c)
 {
@@ -52,7 +50,7 @@ int baselenght(char *base)
     return (i);
 }
 
-void ft_putnbr_base(int nbr, char *base)
+int ft_putnbr_base(int nbr, char *base)
 {
     int len;
     int n;
@@ -69,7 +67,40 @@ void ft_putnbr_base(int nbr, char *base)
     }
 }
 
+int		ft_atoi(char *str)
+{
+	int res;
+	int i;
+	int n;
+
+	i = 0;
+	n = 0;
+	while(str[i] == ' ' || str[i] == '\f' || str[i] == '\r' || str[i] == '\t' || str[i] == '\v')
+		i++;
+	while(str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			n++;
+		i++;
+	}
+	while(str[i] >= '0' && str[i] <= '9')
+	{
+		res = res * 10;
+		res = res + (str[i] - 48);
+		i++;
+	}
+	if (n % 2 == 1)
+		res = -res;
+	return res;
+}
+
+int ft_atoi_base(char *str, char *base)
+{
+    int atoied = ft_atoi(str);
+	return (ft_putnbr_base(atoied,base));  
+}
+
 int main()
 {
-    ft_putnbr_base(131351354, "0123456789abcdefghijklmnopqrstuvxyz");
+	printf("%d", ft_atoi_base("    ++-+-+-+-+-+ 54654", "012345"));
 }

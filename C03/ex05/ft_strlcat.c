@@ -1,34 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 20:51:42 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/15 20:11:20 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 14:26:38 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int ft_strlen(const char *str)
 {
 	int i;
 
 	i = 0;
-	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
+	while (str[i])
 		i++;
-	return (s1[i] - s2[i]);	
+
+	return (i);
 }
 
-#include <string.h>
-#include <stdio.h>
-
-int main ()
+unsigned int ft_strlcat(char *dst, const char *src, int size)
 {
-	char test1[] = "124";
-	char test2[] = "123";
+	int		i;
+	int		a;
+	int		b;
 
-	int test = ft_strncmp(test1, test2, -1);
-	int testt = strncmp(test1,test2, -1);
-	printf("%d | %d", test, testt);
+	i = 0;
+	a = ft_strlen(dst);
+	b = ft_strlen(src);
+	if (size - 1 <= a)
+		return (b + size);
+	while (a + i < size - 1)
+	{
+		dst[a + i] = src[i];
+		i++;
+	}
+	dst[a + i] = '\0';
+	return (a + b);
 }

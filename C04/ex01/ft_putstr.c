@@ -6,7 +6,7 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/13 22:26:43 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 22:32:32 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/20 15:00:32 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,12 @@ void ft_putstr(char *str)
 	}
 }
 
+#include <string.h>
+
 int main()
 {
 	char *test = {"Bonjour"};
 
 	ft_putstr(test);
+	putstr(test);
 }

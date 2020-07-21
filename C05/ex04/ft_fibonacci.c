@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 20:51:42 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/18 18:40:29 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 17:15:21 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int ft_fibonacci(int index)
 {
-	int i;
-
-	i = 0;
-	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
-		i++;
-	return (s1[i] - s2[i]);	
+	if (index == 0)
+		return (0);
+	else if (index == 1)
+		return (1);
+	else if (index < 0)
+		return (-1);
+	else
+		return(ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
-#include <string.h>
 #include <stdio.h>
 
-int main ()
+int main()
 {
-	char test1[] = "124";
-	char test2[] = "123";
-
-	int test = ft_strncmp(test1, test2, -1);
-	int testt = strncmp(test1,test2, -1);
-	printf("%d | %d", test, testt);
+	printf("%d", ft_fibonacci(12));
 }

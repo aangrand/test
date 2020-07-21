@@ -1,44 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 13:52:39 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/14 14:53:20 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/20 18:08:07 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 18:24:46 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strcat(char *dest, char *src)
+int ft_is_prime(int nb)
 {
     int i;
-    int n;
+    int j;
 
-    i = 0;
-    n = 0;
-    while (dest[i])
-        i++;
-    while (src[n])
+    i = 2;
+    j = 1;
+    while (i <= nb / 2)
     {
-        dest[i] = src[n];
+        while (j < 8)
+        {
+            if (i * j == nb)
+                return (0);
+            j++;
+        }
+        j = 1;
         i++;
-        n++;
     }
-    dest[i] = '\0';
-    return (dest);
+    return (1);
 }
 
-#include <string.h>
+int ft_find_next_prime(int nb)
+{
+	if (ft_is_prime(nb) == 0)
+	{
+		while(ft_is_prime(nb) != 1)
+		{
+			nb++;
+		}
+		return (nb);
+	}
+	else
+		return(nb);
+}
+
 #include <stdio.h>
 
 int main ()
 {
-    char test1[] = "Bonjour";
-    char test2[] = " les copains";
-
-    char *test = ft_strcat(test1, test2);
-    //char *test = strcat(test1,test2);
-
-    printf("%s", test);
+    printf("Next prime is : %d\n", ft_find_next_prime(14));
 }

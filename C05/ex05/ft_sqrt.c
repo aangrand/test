@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 20:51:42 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/20 17:16:32 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 17:31:27 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int		ft_sqrt(int nb)
 {
 	int i;
 
 	i = 0;
-	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
-		i++;
-	return (s1[i] - s2[i]);	
+	if (nb < 46341)
+	{
+		while((i * i) < nb)
+		{
+			i++;
+			if (i * i > nb)
+				return(0); 
+		}
+		return (i);
+	}
 }
 
-#include <string.h>
-#include <stdio.h>
-
-int main ()
+int		main()
 {
-	char test1[] = "124";
-	char test2[] = "123";
-
-	int test = ft_strncmp(test1, test2, -1);
-	int testt = strncmp(test1,test2, -1);
-	printf("%d | %d", test, testt);
+	printf("%d", ft_sqrt(100));
 }

@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/10 11:41:22 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/13 20:51:42 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/18 18:33:37 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/20 19:11:42 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2, unsigned int n)
+int ft_iterative_factorial(int nb)
 {
 	int i;
+	int res;
 
-	i = 0;
-	while ((s1[i] && s2[i] && s1[i] == s2[i]) && i + 1 < n)
+	i = 1;
+	res = 1;
+	if ((nb <= 0) || (nb > 12))
+		return (0);
+	if (nb == 1)
+		return (1);
+	while (i <= nb)
+	{
+		res = i * res;
 		i++;
-	return (s1[i] - s2[i]);	
+	}
+	return (res);
 }
 
-#include <string.h>
 #include <stdio.h>
 
-int main ()
+int main()
 {
-	char test1[] = "124";
-	char test2[] = "123";
-
-	int test = ft_strncmp(test1, test2, -1);
-	int testt = strncmp(test1,test2, -1);
-	printf("%d | %d", test, testt);
+	printf("%d", ft_iterative_factorial(5));
 }

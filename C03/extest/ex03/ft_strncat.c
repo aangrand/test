@@ -10,29 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int i;
-	int n;
-	int size;
+  int len;
+  int i;
+  
+  len = 0;
+  while (dest[len])
+    len++;
+  
+  i = 0;
+  while (i < nb)
+  {
+    dest[len] = src[i];
+    i++;
+    len++;
+  }
+  dest[len] = '\0';
 
-	i = 0;
-	n = 0;
-	while(src[i])
-	{
-		i++;
-		size++;
-	}
-	while(dest[n] && i < (nb + size))
-	{
-		src[i] = dest[n];
-		i++;
-		n++;
-	}
-	src[i] = '\0';
-	return (src);
+  return (dest);
 }
-
 #include <string.h>
 #include <stdio.h>
 
