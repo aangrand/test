@@ -12,8 +12,8 @@
 
 int ft_iterative_factorial(int nb)
 {
-	int i;
-	int res;
+	long int i;
+	long int res;
 
 	i = 1;
 	res = 1;
@@ -33,5 +33,5 @@ int ft_iterative_factorial(int nb)
 
 int main()
 {
-	printf("%d", ft_iterative_factorial(5));
+	printf("%d", ft_iterative_factorial(20));
 }

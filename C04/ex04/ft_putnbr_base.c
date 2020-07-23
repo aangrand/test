@@ -6,7 +6,7 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/15 11:08:57 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 16:45:14 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/22 14:51:07 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ void	ft_putnbr_base(int nbr, char *base)
 	{
 		n = nbr;
 		len = baselenght(base);
+		if (nbr < 0)
+		{
+			ft_putchar('-');
+			n = -n;
+		}
 		if (n > 9)
 		{
 			ft_putnbr_base(n / len, base);
@@ -69,4 +74,9 @@ void	ft_putnbr_base(int nbr, char *base)
 		}
 		ft_putchar(base[n]);
 	}
+}
+
+int main()
+{
+    ft_putnbr_base(123, "arthur");
 }

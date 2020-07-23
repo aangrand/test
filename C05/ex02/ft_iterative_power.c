@@ -6,21 +6,23 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 19:28:27 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 17:26:24 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/23 12:16:38 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_iterative_power(int nb, int power)
 {
 	int i;
+	int n; 
 
-	i = nb;
-	if (nb == 0 && power == 0)
-		return (1);
-	while (power != 0)
+	if (power < 0)
+		return (0);
+	i = 0; 
+	n = 1;
+	while (i < power)
 	{
-		nb = i * nb;
-		power--;
+		i++;
+		n *= nb;
 	}
-	return (nb);
+	return (n);
 }

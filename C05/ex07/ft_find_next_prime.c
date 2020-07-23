@@ -6,26 +6,21 @@
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 18:08:07 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/21 18:45:44 by aangrand         ###   ########.fr       */
+/*   Updated: 2020/07/23 12:15:26 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_is_prime(int nb)
 {
 	int i;
-	int j;
 
 	i = 2;
-	j = 1;
-	while (i <= nb / 2)
+	if (nb <= 1)
+		return (0);
+	while (i <= nb / i)
 	{
-		while (j < 8)
-		{
-			if (i * j == nb)
-				return (0);
-			j++;
-		}
-		j = 1;
+		if (nb % i == 0)
+			return (0);
 		i++;
 	}
 	return (1);

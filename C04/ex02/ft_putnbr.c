@@ -21,8 +21,6 @@ void	ft_putnbr(int nb)
 {
 	long		i;
 	long int	n;
-	char		*res;
-	char		temp;
 
 	n = nb;
 	i = 0;

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   test.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aangrand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 17:16:32 by aangrand          #+#    #+#             */
-/*   Updated: 2020/07/23 18:43:24 by aangrand         ###   ########.fr       */
+/*   Created: 2020/07/23 20:06:01 by aangrand          #+#    #+#             */
+/*   Updated: 2020/07/23 20:34:40 by aangrand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_sqrt(int nb)
-{
-	int i;
+#include <stdlib.h>
+#include <stdio.h>
 
-	i = 0;
-	if (nb > 46340 * 46340)
-	   return(0);	
-	while (i < nb)
-	{
-		if (i * i == nb)
-			return (i);
-		i++;
-	}
-	return (0);
+int main() 
+{
+	char *tab; 
+	int len;
+
+	len = 0;
+	while(tab[len])
+		len++;
+	tab = malloc(sizeof(*tab) * len);
+	
+	tab = "Bonjour";
+	printf("%s\n", &tab);
 }
